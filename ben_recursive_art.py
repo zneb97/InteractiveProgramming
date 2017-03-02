@@ -141,16 +141,16 @@ def test_image(filename, x_size=350, y_size=350):
 
     im.save(filename)
 
-def generate_art(filename, x_size=350, y_size=350):
+def generate_art(filename, x_size=250, y_size=250):
     """ Generate computational art and save as an image file.
 
         filename: string filename for image (should be .png)
         x_size, y_size: optional args to set image dimensions (default: 350)
     """
     # Functions for red, green, and blue channels - where the magic happens!
-    red_function = build_random_function(19, 19)
-    green_function = build_random_function(19, 19)
-    blue_function = build_random_function(19, 19)
+    red_function = build_random_function(5, 6)
+    green_function = build_random_function(5, 6)
+    blue_function = build_random_function(5, 6)
 
     # Create image and loop over all pixels
     im = Image.new("RGB", (x_size, y_size))
