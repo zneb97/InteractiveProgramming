@@ -36,12 +36,12 @@ def regen():
     Regenerate art based on user settings
     """
     #Functions to be used (0 No, 1 Yes)
-    setFunctions = {'Sin':sinCheckbox.var.get()*sinSlider.var.get(),
-                  'Cos':cosCheckbox.var.get()*cosSlider.var.get(),
-                  'Multi':multiCheckbox.var.get()*multiSlider.var.get(),
-                  'Avg':avgCheckbox.var.get()*avgSlider.var.get(),
-                  'SinPi':sinPiCheckbox.var.get()*sinPiSlider.var.get(),
-                  'CosPi':cosPiCheckbox.var.get()*cosPiSlider.var.get()}
+    setFunctions = {'cos_pi':cosPiCheckbox.var.get()*cosPiSlider.var.get(),
+                     'sin_pi':sinPiCheckbox.var.get()*sinPiSlider.var.get(),
+                  'prod':multiCheckbox.var.get()*multiSlider.var.get(),
+                  'avg':avgCheckbox.var.get()*avgSlider.var.get(),
+                  'arctan':arcTanCheckbox.var.get()*arcTanSlider.var.get(),
+                  'geomean':geoMeanCheckbox.var.get()*geoMeanSlider.var.get()}
 
     #Depth to recurse to
     #setDepth = depthSlider.var.get()
@@ -65,7 +65,7 @@ def regen():
     img = ImageTk.PhotoImage(file="myArt" + str(initialImageFlag) + ".png")
     panel = Label(root, image = img)
     panel.image = img
-    panel.grid(row=1, column=3, rowspan = 11)
+    panel.grid(row=2, column=3, rowspan = 11)
 
 #Flag to know first image
 initialImageFlag = 0;
@@ -74,13 +74,13 @@ initialImageFlag = 0;
 root = tk.Tk()
 root.title("Computational Art")
 root.resizable(width = False, height = False)
-root.geometry("1200x500")
+root.geometry("1250x500")
 
 #Create grid system special rules (use for blank grid rows/columns)
 root.grid_columnconfigure(0, minsize=150)
-root.grid_columnconfigure(1, minsize=350)
+root.grid_columnconfigure(1, minsize=250)
 root.grid_columnconfigure(2, minsize=350)
-root.grid_columnconfigure(3, minsize=250)
+root.grid_columnconfigure(3, minsize=350)
 root.grid_rowconfigure(3, minsize=25)
 
 #Create labels
@@ -97,8 +97,8 @@ blueMinDepthSelectLabel = myLabel(root, 'Blue Min Depth',8,2)
 blueMaxDepthSelectLabel = myLabel(root, 'Blue Max Depth',10,2)
 
 #Create checkboxes
-sinCheckbox = myCheckButton(root, 'Sine',5,0, 'left', W)
-cosCheckbox= myCheckButton(root, 'Cosine',6,0, 'left', W)
+arcTanCheckbox = myCheckButton(root, 'ArcTangent',5,0, 'left', W)
+geoMeanCheckbox= myCheckButton(root, 'Geometric Mean',6,0, 'left', W)
 multiCheckbox = myCheckButton(root, 'Multiply',7,0, 'left', W)
 avgCheckbox = myCheckButton(root, 'Average',8,0, 'left', W)
 sinPiCheckbox = myCheckButton(root, 'Sin Pi',9,0, 'left', W)
@@ -112,8 +112,8 @@ greenMaxDepthSlider = mySlider(root, 7, 2, 200)
 blueMinDepthSlider = mySlider(root, 9, 2, 200)
 blueMaxDepthSlider = mySlider(root, 11, 2, 200)
 
-sinSlider = mySlider(root, 5, 1, 200)
-cosSlider = mySlider(root, 6, 1, 200)
+arcTanSlider = mySlider(root, 5, 1, 200)
+geoMeanSlider = mySlider(root, 6, 1, 200)
 multiSlider = mySlider(root, 7, 1, 200)
 avgSlider = mySlider(root, 8, 1, 200)
 sinPiSlider = mySlider(root, 9, 1, 200)

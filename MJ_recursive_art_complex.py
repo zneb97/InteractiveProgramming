@@ -73,8 +73,9 @@ def build_random_function_real(min_depth,max_depth,f_list):
         return [random.choice(["x","y"])]
     elif min_depth == 1:
         functionDict = allfunctions_real
-        choices = flist.append("x")
-        choices.append("y")
+        choices = f_list
+        #choices.append("x")
+        #choices.append("y")
     else:
         functionDict = functions_real
         choices = f_list
@@ -238,7 +239,8 @@ def generate_art(filename, isreal, ri =0, bi=0,gi=0, mins = [2,2,2], maxes = [10
                         )
 
         im.save(filename)
-    else:
+
+    else: #Imaginary is checked
         weighted_choices = build_choice(frequ_dict_imaginary)
         if maxes[0] >8:
             maxes[0] = 8
