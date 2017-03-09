@@ -1,6 +1,6 @@
-Our project looks to expand upon the computational art project by allowing the user to interact creatively with our program to better understand different color systems. Eventually we hope to use this knowledge to recreate a user input an image and then generating computational art squares to create a photomosaic input an image and then generating computational art squares to create a photomosaic. We also of course hope to have a lot of fun given just how many ways we can take this project.
+Our project looks to expand upon the computational art project by allowing the user to interact creatively with our program to better understand different color systems. Eventually we hope to use this knowledge to recreate a user input an image and then generating computational art squares to create a photomosaic. We also of course hope to have a lot of fun given just how many ways we can take this project.
 
-The main idea is to create a ui that can manipulate the art generator from the computational art miniproject. We both really loved this miniproject and would love to explore different factors’ effects on the generated art. Our minimum viable product is a program that generates computational art based on imput parameters like depth, start colors, and functions. We want the user to be able to choose the prominent colors and the functions used in creating. 
+The main idea is to create a UI that can manipulate the art generator from the computational art miniproject. We both really loved this miniproject and would love to explore different factors’ effects on the generated art. Our minimum viable product is a program that generates computational art based on imput parameters like depth, start colors, and functions. We want the user to be able to choose the prominent colors and the functions used in creating. 
 
 We also want to highlight the difference between different color systems so we will also want to have features that use RGB and HSV and color additive versus color subtractive schemes. 
 
@@ -13,15 +13,15 @@ MJ- Include doc strings, and more comments.
 Steps to success:
 1. Understand how to control colors and shapes of computational art program
 2. Implement a user control sche
-3. Take an input photo, take the 3 most common values, then use that to form computational art
-4. Recreate a user input photo out of computational art in a photomosaic
+3. Take in 3 user defined colors, then use that to form computational art
+4. Stretch goal - Recreate a user input photo out of computational art in a photomosaic
 5. Stretch goal - Webcam integration
 
 Libraries:
 Numpy
 Random
 Pillow
-Some kind of UI library- KIVY
+Some kind of UI library- KIVY, Tkinter
 
 MId-Project Check in:
 We want to be able to manipulate computational art. We want to control depth, color scheme, complexity, and functions used in creation
