@@ -7,8 +7,8 @@ real number based art.
 
 import tkinter as tk
 from tkinter import ttk
-from ArtmakerTry2 import generate_art_real
-from ArtmakerTry2 import generate_art_imaginary
+from ComputationalArt import generate_art_real
+from ComputationalArt import generate_art_imaginary
 from tkinter import *
 from PIL import ImageTk, Image
 import platform
