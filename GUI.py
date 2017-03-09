@@ -44,10 +44,13 @@ class mySlider:
 def regen():
     """
     Regenerate art based on user settings
+
+    Pulls in settings from various widgets
     """
 
     filename = "myArt" + str(initialImageFlag) + ".png"
     setSystem = numberSystem.get()
+
     #Real
     if setSystem:
 
@@ -141,10 +144,12 @@ systemSelectLabel = myLabel(root, 'MJ MCMillen & Ben Ziemann',17,1)
 systemSelectLabel = myLabel(root, 'Software Design Project 4',18,1)
 
 #Color Setting tabs ----------------------------------------------------------
+
 #Red Tab
 redFuncLabel = myLabel(frameRed, 'Select functions to use:',0,0,W)
 redWeightLabel = myLabel(frameRed, 'Select function weight:',0,1,W)
 
+    #Checkboxes
 arcTanCheckboxRed = myCheckButton(frameRed, 'ArcTangent',1,0, 'left', W)
 geoMeanCheckboxRed = myCheckButton(frameRed, 'Geometric Mean',2,0, 'left', W)
 multiCheckboxRed = myCheckButton(frameRed, 'Multiply',3,0, 'left', W)
@@ -152,6 +157,7 @@ avgCheckboxRed = myCheckButton(frameRed, 'Average',4,0, 'left', W)
 sinPiCheckboxRed = myCheckButton(frameRed, 'Sin Pi',5,0, 'left', W)
 cosPiCheckboxRed = myCheckButton(frameRed, 'Cos Pi',6,0, 'left', W)
 
+    #Slider
 arcTanSliderRed = mySlider(frameRed, 1, 1, 200)
 geoMeanSliderRed = mySlider(frameRed, 2, 1, 200)
 multiSliderRed = mySlider(frameRed, 3, 1, 200)
@@ -183,6 +189,7 @@ maxSliderRed = mySlider(frameRed, 14, 1, 200)
 greenFuncLabel = myLabel(frameGreen, 'Select functions to use:',0,0,W)
 greenWeightLabel = myLabel(frameGreen, 'Select function weight:',0,1,W)
 
+    #Checkboxes
 arcTanCheckboxGreen = myCheckButton(frameGreen, 'ArcTangent',1,0, 'left', W)
 geoMeanCheckboxGreen = myCheckButton(frameGreen, 'Geometric Mean',2,0, 'left', W)
 multiCheckboxGreen = myCheckButton(frameGreen, 'Multiply',3,0, 'left', W)
@@ -190,6 +197,7 @@ avgCheckboxGreen = myCheckButton(frameGreen, 'Average',4,0, 'left', W)
 sinPiCheckboxGreen = myCheckButton(frameGreen, 'Sin Pi',5,0, 'left', W)
 cosPiCheckboxGreen = myCheckButton(frameGreen, 'Cos Pi',6,0, 'left', W)
 
+    #Slider
 arcTanSliderGreen = mySlider(frameGreen, 1, 1, 200)
 geoMeanSliderGreen = mySlider(frameGreen, 2, 1, 200)
 multiSliderGreen = mySlider(frameGreen, 3, 1, 200)
@@ -221,6 +229,7 @@ maxSliderGreen = mySlider(frameGreen, 14, 1, 200)
 blueFuncLabel = myLabel(frameBlue, 'Select functions to use:',0,0,W)
 blueWeightLabel = myLabel(frameBlue, 'Select function weight:',0,1,W)
 
+    #Checkboxes
 arcTanCheckboxBlue = myCheckButton(frameBlue, 'ArcTangent',1,0, 'left', W)
 geoMeanCheckboxBlue = myCheckButton(frameBlue, 'Geometric Mean',2,0, 'left', W)
 multiCheckboxBlue = myCheckButton(frameBlue, 'Multiply',3,0, 'left', W)
@@ -228,6 +237,7 @@ avgCheckboxBlue = myCheckButton(frameBlue, 'Average',4,0, 'left', W)
 sinPiCheckboxBlue = myCheckButton(frameBlue, 'Sin Pi',5,0, 'left', W)
 cosPiCheckboxBlue = myCheckButton(frameBlue, 'Cos Pi',6,0, 'left', W)
 
+    #Sliders
 arcTanSliderBlue = mySlider(frameBlue, 1, 1, 200)
 geoMeanSliderBlue = mySlider(frameBlue, 2, 1, 200)
 multiSliderBlue = mySlider(frameBlue, 3, 1, 200)
@@ -259,17 +269,20 @@ maxSliderBlue = mySlider(frameBlue, 14, 1, 200)
 imagineFuncLabel = myLabel(frameImagine, 'Select functions to use:',0,0,W)
 imagineWeightLabel = myLabel(frameImagine, 'Select function weight:',0,1,W)
 
+    #Checkboxes
 sumCheckboxImagine = myCheckButton(frameImagine, 'Sum',1,0, 'left', W)
 multiCheckboxImagine = myCheckButton(frameImagine, 'Multiply',2,0, 'left', W)
 cosCheckboxImagine = myCheckButton(frameImagine, 'Cosine',3,0, 'left', W)
 expCheckboxImagine = myCheckButton(frameImagine, 'Exponent',4,0, 'left', W)
 expCheckboxImagine.name.deselect()
 
+    #Sliders
 sumSliderImagine = mySlider(frameImagine, 1, 1, 200)
 multiSliderImagine = mySlider(frameImagine, 2, 1, 200)
 cosSliderImagine = mySlider(frameImagine, 3, 1, 200)
 expSliderImagine = mySlider(frameImagine, 4, 1, 200)
 
+    #Depth
 imagineDepthLabel = myLabel(frameImagine, 'Min Depth:',6,0,W)
 imagineDepthLabel = myLabel(frameImagine, 'Max Depth:',7,0,W)
 minSliderImagine = mySlider(frameImagine, 6, 1, 200)
