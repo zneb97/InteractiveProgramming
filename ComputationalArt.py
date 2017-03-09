@@ -1,7 +1,8 @@
-""" THis is the computational art miniproject
-The old one was tking waaayyy too long.... I am going to split generate art up into different functions and try and make it go faster somehow.
-by MJ-McMillen
- """
+"""
+This is the computational art side of MJ and Ben's Software Design
+Mini Project 4, Interactive programming. It takes in settings from the GUI
+to generate new imaginary and real number based art.
+"""
 
 import random
 import math
@@ -21,6 +22,7 @@ allfunctions_real = {"x":"x", "y":"y"}
 allfunctions_real.update(functions_real)
 
 #functions for the complex number hsv random art.
+
 functions_imaginary = {"sum": (lambda c1,c2:c1+c2),"mult": (lambda c1,c2:c1*c2), "cos" : (lambda c:cmath.cos(c)),"exp" : (lambda c:cmath.exp(c))}
 allFunctions_imaginary = {"I": "I"}
 allFunctions_imaginary.update(functions_imaginary)
@@ -217,17 +219,17 @@ def generate_art_real(filename, c1 =[255,0,0], c2 = [0,255,0],c3 =[0,0,255], min
     im.save(filename)
 
 
-def generate_art_imaginary(filename, maxes=5,mins=2,frequ_dict_imaginary = default_imaginary_weights, x_size=350, y_size=350):
+def generate_art_imaginary(filename, maxes=[5],mins=[2],frequ_dict_imaginary = default_imaginary_weights, x_size=350, y_size=350):
     """ Generate computational art and save as an image file.
 
         filename: string filename for image (should be .png)
         x_size, y_size: optional args to set image dimensions (default: 350)
     """
     weighted_choices = build_choice(frequ_dict_imaginary)
-    if maxes >8:
-        maxes = 8
-    if mins > maxes:
-            mins = maxes
+    if maxes[0] >8:
+        maxes[0] = 8
+    if mins[0] > maxes[0]:
+            mins[0] = maxes[0]
     HS = build_random_function_imaginary(mins[0],maxes[0],weighted_choices)
     #V = build_random_function_real(2,10)
     # Create image and loop over all pixels
@@ -251,12 +253,4 @@ def generate_art_imaginary(filename, maxes=5,mins=2,frequ_dict_imaginary = defau
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
-
-    # Create some computational art!
-    # TODO: Un-comment the generate_art function call after you
-    #       implement remap_interval and evaluate_random_function
-    # generate_art("myart.png")
-
-    # Test that PIL is installed correctly
-    # TODO: Comment or remove this function call after testing PIL install
     generate_art_real("testing.png", c1 = (27,174,12), c2 = (127,46,242), c3 = (174,87,14))
