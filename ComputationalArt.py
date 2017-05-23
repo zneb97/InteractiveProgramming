@@ -207,9 +207,12 @@ def generate_art_real(filename, c1 =[255,0,0], c2 = [0,255,0],c3 =[0,0,255], min
         for j in range(y_size):
             x = remap_interval(i, 0, x_size, -1, 1)
             y = remap_interval(j, 0, y_size, -1, 1)
-            color_1 =[color_map(evaluate_random_function_real(color_function_one, x, y),c1[0]),color_map(evaluate_random_function_real(color_function_one, x, y),c1[1]),color_map(evaluate_random_function_real(color_function_one, x, y),c1[2])]
-            color_2 =[color_map(evaluate_random_function_real(color_function_two, x, y),c2[0]),color_map(evaluate_random_function_real(color_function_two, x, y),c2[1]),color_map(evaluate_random_function_real(color_function_two, x, y),c2[2])]
-            color_3 =[color_map(evaluate_random_function_real(color_function_three, x, y),c3[0]),color_map(evaluate_random_function_real(color_function_three, x, y),c3[1]),color_map(evaluate_random_function_real(color_function_three, x, y),c3[2])]
+            f1 = evaluate_random_function_real(color_function_one,x,y)
+            f2 = evaluate_random_function_real(color_function_two,x,y)
+            f3 = evaluate_random_function_real(color_function_three,x,y)
+            color_1 =[color_map(f1,c1[0]),color_map(f1,c1[1]),color_map(f1,c1[2])]
+            color_2 =[color_map(f2,c2[0]),color_map(f2,c2[1]),color_map(f2,c2[2])]
+            color_3 =[color_map(f3,c3[0]),color_map(f3,c3[1]),color_map(f3,c3[2])]
             pixels[i, j] = (
                     color_1[0]+color_2[0]+color_3[0],
                     color_1[1]+color_2[1]+color_3[1],

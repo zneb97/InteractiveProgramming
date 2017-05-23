@@ -140,8 +140,6 @@ frameImagine.grid_columnconfigure(0, minsize= 200)
 
 #Create geneal labels---------------------------------------------------------
 systemSelectLabel = myLabel(root, 'Select system to use:',0,0,W)
-systemSelectLabel = myLabel(root, 'MJ MCMillen & Ben Ziemann',17,1)
-systemSelectLabel = myLabel(root, 'Software Design Project 4',18,1)
 
 #Color Setting tabs ----------------------------------------------------------
 
